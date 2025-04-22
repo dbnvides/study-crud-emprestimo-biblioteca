@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import bookRouter from './routes/books.route.js'
 import authorRouter from './routes/author.route.js'
 import userRouter from './routes/user.route.js'
+import loanRouter from './routes/loans.route.js'
 
 dotenv.config()
 const app = express()
@@ -13,5 +14,6 @@ app.use(cors())
 app.use('/book', bookRouter)
 app.use('/author', authorRouter)
 app.use('/user', userRouter)
+app.use('/loan', loanRouter)
 
 export default app

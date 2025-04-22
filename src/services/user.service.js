@@ -41,7 +41,7 @@ export const deleteUserService = async(id) => {
 export const reatriveUserService = async (id) =>{
     const user = await prisma.user.findFirst({
         where:{
-            id: id
+            id: Number(id)
         }
     })
 

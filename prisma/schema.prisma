@@ -18,7 +18,7 @@ model Book {
   id              Int     @id @default(autoincrement())
   title           String
   publicationYear Int
-  authorId        Int     @unique
+  authorId        Int
   available       Boolean
   author          Author  @relation(fields: [authorId], references: [id])
   Loan            Loan[]
@@ -27,7 +27,7 @@ model Book {
 model Author {
   id   Int    @id @default(autoincrement())
   name String
-  Book Book?
+  Book Book[]
 }
 
 model User {
